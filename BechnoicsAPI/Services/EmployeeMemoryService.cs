@@ -6,10 +6,20 @@ using BechnoicsAPI.Models;
 
 namespace BechnoicsAPI.Services
 {
+    /// <summary>
+    /// Employee Service In-Memory Class
+    /// </summary>
+    /// <seealso cref="BechnoicsAPI.Services.IEmployeeService" />
     public class EmployeeMemoryService : IEmployeeService
     {
+        /// <summary>
+        /// The employees
+        /// </summary>
         private readonly List<Employee> employees = new List<Employee>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmployeeMemoryService"/> class.
+        /// </summary>
         public EmployeeMemoryService()
         {
             employees.Add(
@@ -44,6 +54,11 @@ namespace BechnoicsAPI.Services
                 });
         }
 
+        /// <summary>
+        /// Adds the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
         public bool Add(Employee model)
         {
             model.Id = employees.Max(c => c.Id) + 1;
@@ -52,11 +67,20 @@ namespace BechnoicsAPI.Services
             return true;
         }
 
+        /// <summary>
+        /// Gets all.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Employee> GetAll()
         {
             return employees.AsEnumerable();
         }
 
+        /// <summary>
+        /// Gets the by identifier.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public Employee GetById(int id)
         {
             return employees.FirstOrDefault(c => c.Id == id);

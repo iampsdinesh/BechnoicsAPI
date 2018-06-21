@@ -1,20 +1,12 @@
 ﻿using System;
 
-namespace BechnoicsAPI.Models
+namespace BechnoicsAPI.ViewModels
 {
     /// <summary>
-    /// Employee Class
+    /// Employee View Model for Creating Employees
     /// </summary>
-    public class Employee
+    public class EmployeeCreateViewModel
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public int Id { get; set; }
-
         /// <summary>
         /// Gets or sets the first name.
         /// </summary>
@@ -38,14 +30,6 @@ namespace BechnoicsAPI.Models
         /// The start date at bench.
         /// </value>
         public DateTime StartDateAtBench { get; set; }
-
-        /// <summary>
-        /// Gets or sets the end date at bench.
-        /// </summary>
-        /// <value>
-        /// The end date at bench.
-        /// </value>
-        public DateTime? EndDateAtBench { get; set; }
 
         /// <summary>
         /// Gets or sets the skillset.
